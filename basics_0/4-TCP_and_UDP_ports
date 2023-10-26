@@ -3,7 +3,7 @@
 	# Function to display listening ports
 	function display_listening_ports() {
 	    # Get the list of listening sockets using netstat command
-	    listening_sockets=$(netstat -tlnp 2>/dev/null | grep LISTEN)
+	    listening_sockets=$(ss -tlnp 2>/dev/null | grep LISTEN)
 
 	    # Check if there are any listening sockets
 	    if [[ -z $listening_sockets ]]; then
