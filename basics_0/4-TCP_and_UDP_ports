@@ -1,21 +1,4 @@
 	#!/bin/bash
 
 	# Function to display listening ports
-	function display_listening_ports() {
-	    # Get the list of listening sockets using netstat command
-	    listening_sockets=$(ss -tlnp 2>/dev/null | grep LISTEN)
-
-	    # Check if there are any listening sockets
-	    if [[ -z $listening_sockets ]]; then
-	        echo "No listening ports found"
-	        return
-	    fi
-
-	    # Display the PID and name of the program for each listening socket
-	    echo "Listening Ports:"
-	    echo "----------------"
-	    echo "$listening_sockets" | awk '{print "PID: "$7", Program: "$9}'
-	}
-
-	# Call the function to display listening ports
-	display_listening_ports
+ss -tulpn
