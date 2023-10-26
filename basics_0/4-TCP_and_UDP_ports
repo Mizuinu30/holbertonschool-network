@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Use ss to display listening sockets and associated processes
+ss -tuln | awk 'NR>1 {
+  split($4, a, ":");
+  cmd = "lsof -i :"a[2]" | awk '\''NR>1 {print $2, $1}'\''";
+  cmd | getline output;
+  close(cmd);
+  if (output != "") {
+    print $1, $2, a[1]":"a[2], output;
+  }
+}'
