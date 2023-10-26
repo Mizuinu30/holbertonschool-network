@@ -1,4 +1,4 @@
 	#!/bin/bash
 
 	# Function to display listening ports
-	lsof -nP -iTCP -sTCP:LISTEN
+netstat -tunlp
