@@ -1,4 +1,4 @@
 	#!/bin/bash
-
 	# Function to display listening ports
-netstat -l -p
+
+  netstat -l -p
