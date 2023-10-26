@@ -1,4 +1,4 @@
 	#!/bin/bash
 
 	# Function to display listening ports
-ss -tulpn
+	lsof -nP -iTCP -sTCP:LISTEN
